@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1362946909 source:c:\users\brandon\desktop\sudokusolver\main.cpp
+	<windows.h>
+	<iostream>
+	"PuzzleInfo.hpp"
+	"PuzzleAlgorithms.hpp"
+
+1362308468 c:\users\brandon\desktop\sudokusolver\puzzleinfo.hpp
+	<windows.h>
+	<iostream>
+	<vector>
+	<fstream>
+	"Manipulation.hpp"
+
+1362946875 source:c:\users\brandon\desktop\sudokusolver\puzzleinfo.cpp
+	"PuzzleInfo.hpp"
+
+1362334072 c:\users\brandon\desktop\sudokusolver\manipulation.hpp
+	<vector>
+	<sstream>
+
+1362297413 source:c:\users\brandon\desktop\sudokusolver\manipulation.cpp
+	"Manipulation.hpp"
+
+1362430499 c:\users\brandon\desktop\sudokusolver\puzzlealgorithms.hpp
+	<vector>
+	<algorithm>
+	"PuzzleInfo.hpp"
+
+1362430486 source:c:\users\brandon\desktop\sudokusolver\puzzlealgorithms.cpp
+	"PuzzleAlgorithms.hpp"
+
+1369415283 source:c:\users\brandon\desktop\c++\sudokusolver\main.cpp
+	<windows.h>
+	<iostream>
+	"PuzzleInfo.hpp"
+	"PuzzleAlgorithms.hpp"
+
+1362308468 c:\users\brandon\desktop\c++\sudokusolver\puzzleinfo.hpp
+	<windows.h>
+	<iostream>
+	<vector>
+	<fstream>
+	"Manipulation.hpp"
+
+1362334072 c:\users\brandon\desktop\c++\sudokusolver\manipulation.hpp
+	<vector>
+	<sstream>
+
+1362430499 c:\users\brandon\desktop\c++\sudokusolver\puzzlealgorithms.hpp
+	<vector>
+	<algorithm>
+	"PuzzleInfo.hpp"
+
+1362297413 source:c:\users\brandon\desktop\c++\sudokusolver\manipulation.cpp
+	"Manipulation.hpp"
+
+1362430486 source:c:\users\brandon\desktop\c++\sudokusolver\puzzlealgorithms.cpp
+	"PuzzleAlgorithms.hpp"
+
+1362946875 source:c:\users\brandon\desktop\c++\sudokusolver\puzzleinfo.cpp
+	"PuzzleInfo.hpp"
+
