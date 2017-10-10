@@ -1,7 +1,6 @@
 #ifndef PUZZLEINFO_HPP_INCLUDED
 #define PUZZLEINFO_HPP_INCLUDED
 
-#include <windows.h>
 #include <iostream>
 #include <vector>
 #include <fstream>

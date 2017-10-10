@@ -103,3 +103,54 @@ void FillHiddenSingles(int Index, int PuzzleMatrix[9][9], bool Rows)
         }
     }
 }
+
+bool BruteForce(int X, int Y, int PuzzleMatrix[9][9])
+{
+    auto is_cell_solved = [](int X, int Y, int PuzzleMatrix[9][9]) -> bool {
+        
+        std::vector<int> Possibilities;
+        int value = PuzzleMatrix[X][Y];
+        
+        PuzzleMatrix[X][Y] = 0;
+        GetCellPossibilities(X, Y, PuzzleMatrix, Possibilities);
+        PuzzleMatrix[X][Y] = value;
+        
+        return std::count(Possibilities.begin(), Possibilities.end(), value) == 1;
+    };
+    
+    auto solve = [&is_cell_solved](int X, int Y, int PuzzleMatrix[9][9]) -> bool {
+        if (is_cell_solved(X, Y, PuzzleMatrix))
+        {
+            if (X >= 8 && Y >= 8)
+            {
+                return true;
+            }
+
+            if (++X >= 9)
+            {
+                X = 0;
+                Y += 1;
+            }
+            
+            return BruteForce(X, Y, PuzzleMatrix);
+        }
+        return false;
+    };
+    
+    if (PuzzleMatrix[X][Y] != 0)
+    {
+        return solve(X, Y, PuzzleMatrix);
+    }
+
+    for (int val=1; val<10; val++) {
+        
+        PuzzleMatrix[X][Y] = val;
+        
+        if (solve(X, Y, PuzzleMatrix))
+        {
+            return true;
+        }
+    }
+    PuzzleMatrix[X][Y] = 0;
+    return false;
+}

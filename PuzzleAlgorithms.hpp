@@ -16,4 +16,6 @@ void FillUniqueCells(int PuzzleMatrix[9][9]);
 
 void FillHiddenSingles(int Index, int PuzzleMatrix[9][9], bool Rows);
 
+bool BruteForce(int X, int Y, int PuzzleMatrix[9][9]);
+
 #endif // PUZZLEALGORITHMS_HPP_INCLUDED

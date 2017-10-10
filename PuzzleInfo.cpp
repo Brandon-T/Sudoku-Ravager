@@ -1,9 +1,9 @@
 #include "PuzzleInfo.hpp"
 
-void Move(short X, short Y)
-{
-    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), COORD{X, Y});
-}
+//void Move(short X, short Y)
+//{
+//    SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), COORD{X, Y});
+//}
 
 void FormatPuzzle(std::string FilePath, std::string CurrentDelimiter, std::string PuzzleDelimiter)
 {

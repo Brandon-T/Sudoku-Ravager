@@ -1,4 +1,3 @@
-#include <windows.h>
 #include <iostream>
 #include "PuzzleInfo.hpp"
 #include "PuzzleAlgorithms.hpp"
@@ -34,31 +33,56 @@ void SolveAllPuzzles(std::string PuzzlePath)
         for (int I = 0; I < 10; ++I)
             Solve(Matrix);
 
-        PrintPuzzle(Matrix);
-        if (PuzzleSolved(Matrix)) ++Count;
-        else Puzzles.push_back(I);
+        if (PuzzleSolved(Matrix))
+        {
+            PrintPuzzle(Matrix);
+            ++Count;
+        }
+        else
+        {
+            if (BruteForce(0, 0, Matrix))
+            {
+                PrintPuzzle(Matrix);
+                ++Count;
+            }
+            else
+            {
+                PrintPuzzle(Matrix);
+                Puzzles.push_back(I);
+            }
+        }
     }
 
-    std::cout<<"Failed: "<<Puzzles<<std::endl;
-    std::cout<<"Solved: "<<Count<<" Puzzles!"<<std::endl;
+    if (Puzzles.size())
+    {
+        std::cout<<"Failed: "<<Puzzles<<std::endl;
+        std::cout<<"Solved: "<<Count<<" Puzzles!"<<std::endl;
+    }
+    else
+    {
+        std::cout<<"Solved: "<<Count<<" Puzzles!"<<std::endl;
+    }
 }
 
 int main()
 {
-    CreatePuzzles("C:/Users/Brandon/Desktop/C++/SudokuSolver/Sudoku.txt", "C:/Users/Brandon/Desktop/C++/SudokuSolver/Puzzles/");
-    SolveAllPuzzles("C:/Users/Brandon/Desktop/C++/SudokuSolver/Puzzles/");
+    CreatePuzzles("/users/brandonanthony/Desktop/Sudoku/Sudoku/Sudoku.txt", "/users/brandonanthony/Desktop/Sudoku/Sudoku/Puzzles/");
+    SolveAllPuzzles("/users/brandonanthony/Desktop/Sudoku/Sudoku/Puzzles/");
     std::cin.get();
     return 0;
 
-    /*ReadPuzzle("C:/Users/Brandon/Desktop/SudokuSolver/Puzzles/6.hpp", ", ", Matrix);
-
-    for (int I = 0; I < 10 && !PuzzleSolved(Matrix); ++I)
-    {
-        Solve(Matrix);
-    }
-
-    PrintPuzzle(Matrix);
-
-    //Move(0, 21);
-    return 0;*/
+//    ReadPuzzle("/users/brandonanthony/Desktop/Sudoku/Sudoku/Puzzles/6.hpp", ", ", Matrix);
+//
+//    for (int I = 0; I < 10 && !PuzzleSolved(Matrix); ++I)
+//    {
+//        Solve(Matrix);
+//    }
+//
+//    if (!PuzzleSolved(Matrix))
+//    {
+//        BruteForce(0, 0, Matrix);
+//    }
+//
+//    PrintPuzzle(Matrix);
+//    return 0;
 }
